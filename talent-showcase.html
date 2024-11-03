@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Directory</title>
+    <link rel="stylesheet" href="./css/talent-showcase-style.css">
+    <style>
+        .profile-card img {
+            width: 150px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            object-fit: cover; /* Crop the image to fit within the set dimensions */
+            border-radius: 50%; /* Optional: make images circular */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="img/logoFilm.jpeg" alt="FilmFolio Logo" class="navbar-logo">
+            <span class="navbar-title">FilmFolio</span>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="./dashboard.html">Home</a></li> <!-- Link to dashboard.html -->
+            <li><a class ="scrollToBottom">About</a></li> <!-- Link to About section -->
+            <li><a class ="scrollToBottom">Contact Us</a></li> <!-- Link to Contact Us section -->
+            <li><a href="./index.html">Logout</a></li> <!-- Link to index.html -->
+        </ul>
+    </nav>
+    <!-- Sidebar for Categories -->
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <div class="categories">
+                <label><input type="checkbox" name="category" value="Actor" onclick="filterProfiles()"> Actor</label>
+                <label><input type="checkbox" name="category" value="Writer" onclick="filterProfiles()"> Writer</label>
+                <label><input type="checkbox" name="category" value="Director" onclick="filterProfiles()"> Director</label>
+                <label><input type="checkbox" name="category" value="Animator" onclick="filterProfiles()"> Animator</label>
+                <label><input type="checkbox" name="category" value="Cinematographer" onclick="filterProfiles()"> Cinematographer</label>
+                <label><input type="checkbox" name="category" value="Producer" onclick="filterProfiles()"> Producer</label>
+                <label><input type="checkbox" name="category" value="Editor" onclick="filterProfiles()"> Editor</label>
+            </div>
+        </aside>
+
+        <!-- Main Content Area for Profile Cards -->
+        <main class="profiles">
+            
+
+            <div class="profile-card" data-category="Cinematographer">
+                <img src="./img/headshot20.webp" alt="Profile Picture">
+                <h3>Priyanka Sharma</h3>
+                <p class="location">Kolkata, India</p>
+                <p class="description">Cinematographer capturing vibrant visuals and dramatic compositions.</p>
+                <p class="roles">Cinematographer</p>
+                <div class="links">
+                    <a href="#" class="btn">Open Works</a>
+                </div>
+            </div>
+            
+            <div class="profile-card" data-category="Producer">
+                <img src="./img/headshot21.jpg" alt="Profile Picture">
+                <h3>Siddharth Nair</h3>
+                <p class="location">Chennai, India</p>
+                <p class="description">Producer with experience in both commercial and independent film projects.</p>
+                <p class="roles">Producer</p>
+                <div class="links">
+                    <a href="#" class="btn">Open Works</a>
+                </div>
+            </div>
+            
+            <div class="profile-card" data-category="Animator">
+                <img src="./img/headshot22.jpeg" alt="Profile Picture">
+                <h3>Lakshmi Menon</h3>
+                <p class="location">Bangalore, India</p>
+                <p class="description">Talented animator creating expressive character animations in 2D and 3D.</p>
+                <p class="roles">Animator</p>
+                <div class="links">
+                    <a href="#" class="btn">Open Works</a>
+                </div>
+            </div>
+            
+            <div class="profile-card" data-category="Editor">
+                <img src="./img/headshot23.avif" alt="Profile Picture">
+                <h3>Ravi Desai</h3>
+                <p class="location">Ahmedabad, India</p>
+                <p class="description">Video editor with a knack for pacing and compelling narrative flow.</p>
+                <p class="roles">Editor</p>
+                <div class="links">
+                    <a href="#" class="btn">Open Works</a>
+                </div>
+            </div>
+<div class="profile-card" data-category="Actor">
+    <img src="./img/headshot1.png" alt="Profile Picture">
+    <h3>Arya Patel</h3>
+    <p class="location">Mumbai, India</p>
+    <p class="description">Experienced actor with a range from drama to comedy, known for captivating performances.</p>
+    <p class="roles">Actor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Actor">
+    <img src="./img/headshot11.webp" alt="Profile Picture">
+    <h3>Bruno</h3>
+    <p class="location">Berlin, Germany</p>
+    <p class="description">Barks well</p>
+    <p class="roles">Actor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+<div class="profile-card" data-category="Writer">
+    <img src="./img/headshot2.avif" alt="Profile Picture">
+    <h3>Sofia Lopez</h3>
+    <p class="location">Mexico City, Mexico</p>
+    <p class="description">Screenwriter with a flair for creating intense dramas and inspiring love stories.</p>
+    <p class="roles">Writer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Producer">
+    <img src="./img/headshot29.webp" alt="Profile Picture">
+    <h3>Manoj Pillai</h3>
+    <p class="location">Trivandrum, India</p>
+    <p class="description">Experienced producer with a portfolio of successful regional films.</p>
+    <p class="roles">Producer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+<div class="profile-card" data-category="Director">
+    <img src="./img/headshot2.jpg" alt="Profile Picture">
+    <h3>Ryo Takahashi</h3>
+    <p class="location">Tokyo, Japan</p>
+    <p class="description">Award-winning director known for stunning visuals and deep storytelling in independent films.</p>
+    <p class="roles">Director</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Animator">
+    <img src="./img/headshot3.jpg" alt="Profile Picture">
+    <h3>Lena Chen</h3>
+    <p class="location">Shanghai, China</p>
+    <p class="description">Animator with a vibrant style, bringing unique character animations to life in 2D and 3D.</p>
+    <p class="roles">Animator</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Cinematographer">
+    <img src="./img/headshot4.jpg" alt="Profile Picture">
+    <h3>Jamal Roberts</h3>
+    <p class="location">New York, USA</p>
+    <p class="description">Talented cinematographer capturing beautiful, dramatic shots across diverse landscapes.</p>
+    <p class="roles">Cinematographer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Producer">
+    <img src="./img/headshot5.jpeg" alt="Profile Picture">
+    <h3>Amara Singh</h3>
+    <p class="location">Toronto, Canada</p>
+    <p class="description">Accomplished producer with experience in managing large-scale film projects globally.</p>
+    <p class="roles">Producer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Editor">
+    <img src="./img/headshot6.jpeg" alt="Profile Picture">
+    <h3>David Miller</h3>
+    <p class="location">Los Angeles, USA</p>
+    <p class="description">Expert video editor specializing in storytelling and seamless transitions for high-impact videos.</p>
+    <p class="roles">Editor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Actor">
+    <img src="./img/headshot7.jpg" alt="Profile Picture">
+    <h3>Emily Wong</h3>
+    <p class="location">Hong Kong, China</p>
+    <p class="description">Versatile actress with experience in both theatre and film, bringing characters to life.</p>
+    <p class="roles">Actor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Writer">
+    <img src="./img/headshot8.jpg" alt="Profile Picture">
+    <h3>Javier Garcia</h3>
+    <p class="location">Madrid, Spain</p>
+    <p class="description">Talented writer specializing in sci-fi and fantasy scripts for films and series.</p>
+    <p class="roles">Writer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Director">
+    <img src="./img/headshot9.avif" alt="Profile Picture">
+    <h3>Isabella Marini</h3>
+    <p class="location">Rome, Italy</p>
+    <p class="description">Director focused on creating powerful, character-driven stories in drama films.</p>
+    <p class="roles">Director</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Animator">
+    <img src="./img/headshot10.jpg" alt="Profile Picture">
+    <h3>Priya Desai</h3>
+    <p class="location">Bangalore, India</p>
+    <p class="description">Creative animator specializing in motion graphics and visual storytelling.</p>
+    <p class="roles">Animator</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+
+<div class="profile-card" data-category="Producer">
+    <img src="./img/headshot12.jpg" alt="Profile Picture">
+    <h3>Julia Evans</h3>
+    <p class="location">London, UK</p>
+    <p class="description">Producer experienced in both independent films and big-budget productions.</p>
+    <p class="roles">Producer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+
+<div class="profile-card" data-category="Director">
+    <img src="./img/headshot16.jpg" alt="Profile Picture">
+    <h3>Yuki Yamamoto</h3>
+    <p class="location">Osaka, Japan</p>
+    <p class="description">Director creating emotionally impactful indie films.</p>
+    <p class="roles">Director</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+<div class="profile-card" data-category="Actor">
+    <img src="./img/headshot17.webp" alt="Profile Picture">
+    <h3>Karan Singh</h3>
+    <p class="location">Mumbai, India</p>
+    <p class="description">Dynamic actor with experience in Bollywood films and stage performances.</p>
+    <p class="roles">Actor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Writer">
+    <img src="./img/headshot18.png" alt="Profile Picture">
+    <h3>Anjali Mehta</h3>
+    <p class="location">Pune, India</p>
+    <p class="description">Writer specializing in romance and family dramas for Indian cinema.</p>
+    <p class="roles">Writer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Director">
+    <img src="./img/headshot19.jpg" alt="Profile Picture">
+    <h3>Vikram Reddy</h3>
+    <p class="location">Hyderabad, India</p>
+    <p class="description">Director known for gritty crime thrillers and intense storytelling.</p>
+    <p class="roles">Director</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+
+<div class="profile-card" data-category="Actor">
+    <img src="./img/headshot24.jpg" alt="Profile Picture">
+    <h3>Neha Kapoor</h3>
+    <p class="location">Jaipur, India</p>
+    <p class="description">Actress with a background in theatre and Bollywood, known for her emotional range.</p>
+    <p class="roles">Actor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Writer">
+    <img src="./img/headshot25.webp" alt="Profile Picture">
+    <h3>Rahul Jain</h3>
+    <p class="location">Surat, India</p>
+    <p class="description">Writer skilled in action-packed scripts and witty dialogue.</p>
+    <p class="roles">Writer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Director">
+    <img src="./img/headshot26.jpg" alt="Profile Picture">
+    <h3>Amrita Das</h3>
+    <p class="location">Lucknow, India</p>
+    <p class="description">Director focusing on character-driven dramas and thought-provoking stories.</p>
+    <p class="roles">Director</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Cinematographer">
+    <img src="./img/headshot27.jpg" alt="Profile Picture">
+    <h3>Rajiv Patel</h3>
+    <p class="location">Nagpur, India</p>
+    <p class="description">Cinematographer with an eye for natural lighting and breathtaking visuals.</p>
+    <p class="roles">Cinematographer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Editor">
+    <img src="./img/headshot13_1.jpg" alt="Profile Picture">
+    <h3>Tommy Chen</h3>
+    <p class="location">Vancouver, Canada</p>
+    <p class="description">Video editor known for precise cuts and impactful storytelling.</p>
+    <p class="roles">Editor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Actor">
+    <img src="./img/headshot14.jpg" alt="Profile Picture">
+    <h3>Marie Dubois</h3>
+    <p class="location">Paris, France</p>
+    <p class="description">Actress with a background in theatre, known for her expressive performances.</p>
+    <p class="roles">Actor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Writer">
+    <img src="./img/headshot15.webp" alt="Profile Picture">
+    <h3>Alex Knight</h3>
+    <p class="location">Los Angeles, USA</p>
+    <p class="description">Experienced writer with a knack for horror and thriller scripts.</p>
+    <p class="roles">Writer</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+<div class="profile-card" data-category="Animator">
+    <img src="./img/headshot28.jpg" alt="Profile Picture">
+    <h3>Ananya Iyer</h3>
+    <p class="location">Coimbatore, India</p>
+    <p class="description">Animator bringing unique character animations to life in animated short films.</p>
+    <p class="roles">Animator</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+
+
+<div class="profile-card" data-category="Editor">
+    <img src="./img/heashot30.jpg" alt="Profile Picture">
+    <h3>Rita Gupta</h3>
+    <p class="location">Patna, India</p>
+    <p class="description">Video editor specializing in documentaries and non-linear storytelling.</p>
+    <p class="roles">Editor</p>
+    <div class="links">
+        <a href="#" class="btn">Open Works</a>
+    </div>
+</div>
+<!-- Repeat the pattern above to add more profiles as necessary -->
+    <!-- Repeat the pattern above to add more profiles as necessary -->
+<!-- Repeat the pattern above to add more profiles as necessary -->
+        </main>
+        
+    </div>
+    <footer>
+        <div class="footer-container">
+          <img src="./img/logoFilm.jpeg" alt="FilmFolio Logo" class="footer-logo" style="margin-top: 30px;"> <!-- Logo Image -->
+          
+          <div class="about-filmfolio">
+            <h3>About FilmFolio</h3>
+            <p class="about-text">
+              FilmFolio is a collaborative platform designed for filmmakers and actors to connect, share, and create. Founded by Sumanth, Neha, and Naveen, our vision is to foster creativity in the film industry by providing a space where talent meets opportunity. Whether you are looking to showcase your work or find collaborators, FilmFolio is here to support your journey.
+            </p>
+          </div>
+          
+          <div class="founders-section">
+            <h2 class="founders-heading" style="margin-top: 20px; font-size: 20px;">Founders</h2>
+            <div class="founders" style="margin-top: 5px; margin-bottom: 10px;">
+              <div class="founder">
+                <p class="founder-name" style="font-size: large;">Sumanth</p>
+              </div>
+              <div class="founder">
+                <p class="founder-name" style="font-size: large;">Neha</p>
+              </div>
+              <div class="founder">
+                <p class="founder-name" style="font-size: large;">Naveen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="contact-section">
+          <h3 style="margin-top: 20px; font-size: 20px;">Contact Us</h3>
+           <div class="contact-info" style="margin-bottom: 35px;">
+            <div class="info-item">
+              <div class="icon">📍</div>
+              <h4>Address</h4>
+              <p>VIT AP, Amravathi, India</p>
+            </div>
+            <div class="info-item">
+              <div class="icon">📞</div>
+              <h4>Phone Number</h4>
+              <p>+91 85199 57828</p>
+            </div>
+            <div class="info-item">
+              <div class="icon">✉️</div>
+              <h4>Email</h4>
+              <p>filmfoliocontact@gmail.com</p>
+            </div>
+            <div class="info-item">
+              <div class="icon">🎧</div>
+              <h4>Toll Free</h4>
+              <p>100 302 2302</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© FilmFolio. All rights reserved.</p>
+        </div>
+      </footer>
+    <script>
+        const scrollLinks = document.querySelectorAll('.scrollToBottom');
+
+scrollLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Scroll to the bottom of the page
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth' // This makes the scroll smooth
+        });
+    });
+});
+        function filterProfiles() {
+            // Get all selected categories
+            const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
+
+            // Get all profile cards
+            const profileCards = document.querySelectorAll('.profile-card');
+
+            // Filter profiles based on selected categories
+            profileCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

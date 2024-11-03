@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Directory</title>
+    <link rel="stylesheet" href="./css/marketplace-style.css">
+    <style>
+        .profile-card img {
+            width: 150px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            object-fit: cover; /* Crop the image to fit within the set dimensions */
+         /* Optional: make images circular */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="img/logoFilm.jpeg" alt="FilmFolio Logo" class="navbar-logo">
+            <span class="navbar-title">FilmFolio</span>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="./dashboard.html">Home</a></li> <!-- Link to dashboard.html -->
+            <li><a class ="scrollToBottom">About</a></li> <!-- Link to About section -->
+            <li><a class ="scrollToBottom">Contact Us</a></li> <!-- Link to Contact Us section -->
+            <li><a href="./index.html">Logout</a></li> <!-- Link to index.html -->
+        </ul>
+    </nav>
+    <!-- Sidebar for Categories -->
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <div class="categories">
+                <label><input type="checkbox" name="category" value="Cameras" onclick="filterProfiles()"> Cameras</label>
+                <label><input type="checkbox" name="category" value="Lenses" onclick="filterProfiles()"> Lenses</label>
+                <label><input type="checkbox" name="category" value="Lighting Equipment" onclick="filterProfiles()"> Lighting Equipment</label>
+                <label><input type="checkbox" name="category" value="Gimbals" onclick="filterProfiles()"> Gimbals</label>
+                <label><input type="checkbox" name="category" value="Memory Cards" onclick="filterProfiles()"> Memory Cards</label>
+                <label><input type="checkbox" name="category" value="Stabilizers" onclick="filterProfiles()"> Stabilizers</label>
+                <label><input type="checkbox" name="category" value="Filters" onclick="filterProfiles()"> Filters</label>
+                <label><input type="checkbox" name="category" value="Dollies" onclick="filterProfiles()"> Dollies</label>
+                <label><input type="checkbox" name="category" value="Backdrops" onclick="filterProfiles()"> Backdrops</label>
+            </div>
+        </aside>
+
+        <!-- Main Content Area for Profile Cards -->
+        <main class="profiles">
+            
+
+            <div class="profile-card" data-category="Cameras">
+                <img src="./img/eq1.webp" alt="Camera">
+                <h3>Canon EOS R5</h3>
+                <p class="location">Vijayawada, AP</p>
+                <p class="description">High-resolution mirrorless camera with 8K video capability. Rent: Rs.2000/day</p>
+                <p class="roles">Cameras</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <!-- Lenses -->
+            <div class="profile-card" data-category="Lenses">
+                <img src="./img/eq3.webp" alt="Lens">
+                <h3>Canon EF 50mm f/1.2L</h3>
+                <p class="location">Hyderabad, Telangana</p>
+                <p class="description">Prime lens, excellent for portrait and low-light shots. Rent: Rs.600/day</p>
+                <p class="roles">Lenses</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <!-- Lighting Equipment -->
+            <div class="profile-card" data-category="Lighting Equipment">
+                <img src="./img/eq5.webp" alt="Lighting">
+                <h3>Aputure 120D II</h3>
+                <p class="location">Mumbai, Maharashtra</p>
+                <p class="description">Powerful LED light, ideal for both indoor and outdoor shoots. Rent: Rs.1000/day</p>
+                <p class="roles">Lighting Equipment</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+
+            <div class="profile-card" data-category="Cameras">
+                <img src="./img/eq2.jpeg" alt="Camera">
+                <h3>Sony A7S III</h3>
+                <p class="location">Hyderabad, Telangana</p>
+                <p class="description">Ideal for low-light shooting, 4K up to 120fps. Rent: Rs.1700/day</p>
+                <p class="roles">Cameras</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+        
+            <div class="profile-card" data-category="Lighting Equipment">
+                <img src="./img/eq6.jpg" alt="Lighting">
+                <h3>Godox SL-60W</h3>
+                <p class="location">Vijayawada, AP</p>
+                <p class="description">Affordable LED light with adjustable brightness. Rent: Rs.750/day</p>
+                <p class="roles">Lighting Equipment</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <div class="profile-card" data-category="Audio Equipment">
+                <img src="./img/eq9.jpg" alt="Microphone">
+                <h3>Rode NTG4+ Shotgun Mic</h3>
+                <p class="location">Banglore, Karnataka</p>
+                <p class="description">Directional mic, ideal for capturing clear dialogue. Rent: Rs.350/day</p>
+                <p class="roles">Audio Equipment</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <div class="profile-card" data-category="Monitors">
+                <img src="./img/eq16.jpg" alt="Monitor">
+                <h3>SmallHD 702 Bright</h3>
+                <p class="location">Vijayawada, AP</p>
+                <p class="description">7-inch daylight-viewable monitor. Rent: Rs.500/day</p>
+                <p class="roles">Monitors</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+            <!-- Gimbals -->
+            <div class="profile-card" data-category="Gimbals">
+                <img src="./img/eq7.png" alt="Gimbal">
+                <h3>DJI Ronin-S</h3>
+                <p class="location">Hyderabad, Telangana</p>
+                <p class="description">Stabilizer for smooth and dynamic shots. Rent: Rs.600/day</p>
+                <p class="roles">Gimbals</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <div class="profile-card" data-category="Gimbals">
+                <img src="./img/eq8.webp" alt="Gimbal">
+                <h3>Zhiyun Crane 3S</h3>
+                <p class="location">Mumbai, India</p>
+                <p class="description">Heavy-duty gimbal for larger cameras. Rent: Rs.500/day</p>
+                <p class="roles">Gimbals</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <!-- Audio Equipment -->
+            <div class="profile-card" data-category="Lenses">
+                <img src="./img/eq4.jpeg" alt="Lens">
+                <h3>Sigma 24-70mm f/2.8 DG DN</h3>
+                <p class="location">Guntur, AP</p>
+                <p class="description">Versatile zoom lens, ideal for various shooting styles. Rent: Rs.950/day</p>
+                <p class="roles">Lenses</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <div class="profile-card" data-category="Audio Equipment">
+                <img src="./img/eq10.png" alt="Recorder">
+                <h3>Zoom H5 Handy Recorder</h3>
+                <p class="location">Hyderabad, Telangana</p>
+                <p class="description">Portable audio recorder with X/Y microphone capsule. Rent: Rs.750/day</p>
+                <p class="roles">Audio Equipment</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <!-- Drones -->
+            <div class="profile-card" data-category="Drones">
+                <img src="./img/eq11.jpg" alt="Drone">
+                <h3>DJI Phantom 4 Pro</h3>
+                <p class="location">Guntur, AP</p>
+                <p class="description">High-resolution aerial shots with obstacle avoidance. Rent: Rs.1500/day</p>
+                <p class="roles">Drones</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+        
+            <!-- Tripods -->
+            <div class="profile-card" data-category="Tripods">
+                <img src="./img/eq13.jpg" alt="Tripod">
+                <h3>Manfrotto MVH502AH</h3>
+                <p class="location">Hyderabad, Telangana</p>
+                <p class="description">Video tripod with fluid head for smooth panning. Rent: Rs.500/day</p>
+                <p class="roles">Tripods</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+            <div class="profile-card" data-category="Filters">
+                <img src="./img/eq21.webp" alt="Filter">
+                <h3>Tiffen Variable ND Filter</h3>
+                <p class="location">Banglore, Karnataka</p>
+                <p class="description">Adjustable ND filter, 2-8 stops. Rent: Rs.400/day</p>
+                <p class="roles">Filters</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+            
+<div class="profile-card" data-category="Backdrops">
+    <img src="./img/eq26.avif" alt="Backdrop">
+    <h3>White Muslin Backdrop</h3>
+    <p class="location">Mumbai, India</p>
+    <p class="description">Perfect for product and portrait shoots. Rent: Rs.400/day</p>
+    <p class="roles">Backdrops</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+            <div class="profile-card" data-category="Tripods">
+                <img src="./img/eq14.jpg" alt="Tripod">
+                <h3>Vijayawada, AP</h3>
+                <p class="location">Hyderabad, Telangana</p>
+                <p class="description">Lightweight and sturdy, perfect for on-the-go shoots. Rent: Rs.600/day</p>
+                <p class="roles">Tripods</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <div class="profile-card" data-category="Drones">
+                <img src="./img/eq12.jpg" alt="Drone">
+                <h3>Mavic Air 2</h3>
+                <p class="location">Mumbai, Maharashtra</p>
+                <p class="description">Compact drone with high-quality 4K video. Rent: Rs.2000/day</p>
+                <p class="roles">Drones</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+            <!-- Monitors -->
+            <div class="profile-card" data-category="Monitors">
+                <img src="./img/eq15.jpg" alt="Monitor">
+                <h3>Vijayawada, AP</h3>
+                <p class="location">Banglore, Karnataka</p>
+                <p class="description">Portable 4K HDMI recorder with a bright 5-inch display. Rent: Rs.1000/day</p>
+                <p class="roles">Monitors</p>
+                <div class="links">
+                    <a href="#" class="btn">More Details</a>
+                </div>
+            </div>
+        
+            <!-- Additional Marketplace Equipment Profiles -->
+
+<!-- Memory Cards -->
+<div class="profile-card" data-category="Memory Cards">
+    <img src="./img/eq17.jpg" alt="Memory Card">
+    <h3>SanDisk Extreme Pro 128GB</h3>
+    <p class="location">Hyderabad, Telangana</p>
+    <p class="description">High-speed SD card for 4K recording. Rent: Rs.200/day each</p>
+    <p class="roles">Memory Cards</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<!-- Stabilizers -->
+<div class="profile-card" data-category="Stabilizers">
+    <img src="./img/eq19.webp" alt="Stabilizer">
+    <h3>Glidecam HD-4000</h3>
+    <p class="location">Vijayawada, AP</p>
+    <p class="description">Handheld stabilizer for smooth shots. Rent: Rs.500/day</p>
+    <p class="roles">Stabilizers</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Stabilizers">
+    <img src="./img/eq20.jpeg" alt="Stabilizer">
+    <h3>Steadicam Zephyr</h3>
+    <p class="location">Banglore, Karnataka</p>
+    <p class="description">Professional stabilizer for dynamic shots. Rent: Rs.700/day</p>
+    <p class="roles">Stabilizers</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<!-- Filters -->
+
+<div class="profile-card" data-category="Memory Cards">
+    <img src="./img/eq18.jpeg" alt="Memory Card">
+    <h3>Lexar Professional 256GB</h3>
+    <p class="location">Hyderabad, Telangana</p>
+    <p class="description">Ultra-fast CFexpress card, ideal for raw video. Rent: Rs.250/day each</p>
+    <p class="roles">Memory Cards</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Filters">
+    <img src="./img/eq22.jpg" alt="Filter">
+    <h3>PolarPro Peter McKinnon ND Filter</h3>
+    <p class="location">Vijayawada, AP</p>
+    <p class="description">Premium ND filter for cinematic shots. Rent: Rs.450/day</p>
+    <p class="roles">Filters</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<!-- Dollies -->
+<div class="profile-card" data-category="Dollies">
+    <img src="./img/eq23.webp" alt="Dolly">
+    <h3>Proaim DSLR Dolly</h3>
+    <p class="location">Berlin, Germany</p>
+    <p class="description">Lightweight dolly for DSLR cameras. Rent: Rs.800/day</p>
+    <p class="roles">Dollies</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<div class="profile-card" data-category="Dollies">
+    <img src="./img/eq24.jpg" alt="Dolly">
+    <h3>GVM Motorized Slider</h3>
+    <p class="location">Hyderabad, Telangana</p>
+    <p class="description">Motorized slider for smooth tracking shots. Rent: Rs.650/day</p>
+    <p class="roles">Dollies</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+<!-- Backdrops -->
+<div class="profile-card" data-category="Backdrops">
+    <img src="./img/eq25.jpg" alt="Backdrop">
+    <h3>Green Screen Backdrop Kit</h3>
+    <p class="location">Banglore, Karnataka</p>
+    <p class="description">Complete kit for green screen shoots. Rent: Rs.700/day</p>
+    <p class="roles">Backdrops</p>
+    <div class="links">
+        <a href="#" class="btn">More Details</a>
+    </div>
+</div>
+
+
+</main>
+<!-- Repeat the pattern above to add more profiles as necessary -->
+    <!-- Repeat the pattern above to add more profiles as necessary -->
+<!-- Repeat the pattern above to add more profiles as necessary -->
+        </main>
+    </div>
+    <footer>
+        <div class="footer-container">
+          <img src="./img/logoFilm.jpeg" alt="FilmFolio Logo" class="footer-logo" style="margin-top: 30px;"> <!-- Logo Image -->
+          
+          <div class="about-filmfolio">
+            <h3>About FilmFolio</h3>
+            <p class="about-text">
+              FilmFolio is a collaborative platform designed for filmmakers and actors to connect, share, and create. Founded by Sumanth, Neha, and Naveen, our vision is to foster creativity in the film industry by providing a space where talent meets opportunity. Whether you are looking to showcase your work or find collaborators, FilmFolio is here to support your journey.
+            </p>
+          </div>
+          
+          <div class="founders-section">
+            <h2 class="founders-heading" style="margin-top: 20px; font-size: 20px;">Founders</h2>
+            <div class="founders" style="margin-top: 5px; margin-bottom: 10px;">
+              <div class="founder">
+                <p class="founder-name" style="font-size: large;">Sumanth</p>
+              </div>
+              <div class="founder">
+                <p class="founder-name" style="font-size: large;">Neha</p>
+              </div>
+              <div class="founder">
+                <p class="founder-name" style="font-size: large;">Naveen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="contact-section">
+          <h3 style="margin-top: 20px; font-size: 20px;">Contact Us</h3>
+           <div class="contact-info" style="margin-bottom: 35px;">
+            <div class="info-item">
+              <div class="icon">📍</div>
+              <h4>Address</h4>
+              <p>VIT AP, Amravathi, India</p>
+            </div>
+            <div class="info-item">
+              <div class="icon">📞</div>
+              <h4>Phone Number</h4>
+              <p>+91 85199 57828</p>
+            </div>
+            <div class="info-item">
+              <div class="icon">✉️</div>
+              <h4>Email</h4>
+              <p>filmfoliocontact@gmail.com</p>
+            </div>
+            <div class="info-item">
+              <div class="icon">🎧</div>
+              <h4>Toll Free</h4>
+              <p>100 302 2302</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© FilmFolio. All rights reserved.</p>
+        </div>
+      </footer>
+    <script>
+        const scrollLinks = document.querySelectorAll('.scrollToBottom');
+
+scrollLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Scroll to the bottom of the page
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth' // This makes the scroll smooth
+        });
+    });
+});
+        function filterProfiles() {
+            // Get all selected categories
+            const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
+
+            // Get all profile cards
+            const profileCards = document.querySelectorAll('.profile-card');
+
+            // Filter profiles based on selected categories
+            profileCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
