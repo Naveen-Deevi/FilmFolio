@@ -40,6 +40,8 @@ model User {
   conversations     ConversationMember[]
   messages          Message[]
   notifications     Notification[]
+  collections       Collection[]
+  savedBy           SavedItem[] @relation("UserSaved")
 
   @@map("users")
 }
@@ -248,6 +250,7 @@ model EquipmentListing {
   category           EquipmentCategory? @relation(fields: [categoryId], references: [id])
   images             EquipmentImage[]
   inquiries          EquipmentInquiry[]
+  savedBy            SavedItem[] @relation("EquipmentSaved")
 
   @@map("equipment_listings")
 }
@@ -322,4 +325,32 @@ model Notification {
   user             User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("notifications")
+}
+
+model Collection {
+  id        BigInt      @id @default(autoincrement())
+  userId    String      @map("user_id") @db.Uuid
+  name      String      @db.VarChar(150)
+  createdAt DateTime?   @default(now()) @map("created_at") @db.Timestamptz
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  savedItems SavedItem[]
+
+  @@unique([userId, name])
+  @@map("collections")
+}
+
+model SavedItem {
+  id             BigInt            @id @default(autoincrement())
+  collectionId   BigInt            @map("collection_id")
+  itemType       String            @map("item_type") @db.VarChar(50) // "user" or "equipment"
+  targetUserId   String?           @map("target_user_id") @db.Uuid
+  targetEquipId  BigInt?           @map("target_equip_id")
+  createdAt      DateTime?         @default(now()) @map("created_at") @db.Timestamptz
+
+  collection     Collection        @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  targetUser     User?             @relation("UserSaved", fields: [targetUserId], references: [id], onDelete: Cascade)
+  targetEquip    EquipmentListing? @relation("EquipmentSaved", fields: [targetEquipId], references: [id], onDelete: Cascade)
+
+  @@unique([collectionId, itemType, targetUserId, targetEquipId])
+  @@map("saved_items")
 }

@@ -49,7 +49,7 @@ export default function LandingPage() {
             <img 
               alt="Filmmaking Hero" 
               className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 hover:scale-105" 
-              src="https://lh3.googleusercontent.com/aida/AP1WRLuu-XAz48w4_dUxx-pXOWwjPzTvLYqD97ctZSBjLfN4xMNCM-FJWREUA-w09MGLB0RcyWHWonZ7QF1Q18yastB_NjQ0bQohZ5f_JWW7fO3PkYz_wU6MpQsh3bSrOoV7TNQtbqbwBKBUnDFsA9y_XY6fyzD3wehrwhq4NWTx3R-X8CObnktk4ksWRCkVZeBhu73t-15ZOoq76izwIqEynnJRq-aY8YbGx65BcABkoTQzhMy8o0gIlWBJzrhR" 
+              src="/hero.png" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div className="relative z-10 p-md md:p-xl w-full max-w-4xl">
@@ -60,7 +60,7 @@ export default function LandingPage() {
                 <Link href="/discover">
                   <button className="glossy-primary text-on-primary-fixed font-title-md text-title-md px-xl py-md rounded-full hover:scale-105 transition-transform w-full md:w-auto h-[52px] flex items-center justify-center">Explore The Catalog</button>
                 </Link>
-                <Link href="/sign-up">
+                <Link href="/about">
                   <button className="liquid-glass text-white font-title-md text-title-md px-xl py-md rounded-full border-white/40 hover:bg-white/10 transition-colors w-full md:w-auto h-[52px] flex items-center justify-center">How it works</button>
                 </Link>
               </div>
@@ -222,7 +222,7 @@ export default function LandingPage() {
             <div className="max-w-2xl pt-lg border-t border-primary/20">
               <h2 className="font-display-lg md:text-[48px] sm:text-[36px] text-[32px] leading-tight mb-md uppercase">Ready to start your next masterpiece?</h2>
               <p className="font-body-lg md:text-[20px] text-[18px] leading-relaxed text-on-surface/90 mb-lg">Join the world's most innovative network of film professionals.</p>
-              <Link href="/sign-up">
+              <Link href="/sign-in">
                 <button className="glossy-primary text-on-primary-fixed font-title-md text-title-md px-xl py-md rounded-full hover:scale-110 active:scale-95 transition-all shadow-xl group w-full md:w-auto h-[52px] flex items-center justify-center mx-auto">
                   Start Creating Now
                   <span className="material-symbols-outlined ml-2 group-hover:translate-x-2 transition-transform">bolt</span>

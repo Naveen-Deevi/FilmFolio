@@ -60,6 +60,9 @@ export default function Navigation({ hasPublished = false }: { hasPublished?: bo
             <Link href="/messages">
               <li className={`hover:text-primary transition-colors cursor-pointer ${isActive("/messages") ? "border-b-2 border-primary font-bold" : ""}`}>Messages</li>
             </Link>
+            <Link href="/about">
+              <li className={`hover:text-primary transition-colors cursor-pointer ${isActive("/about") ? "border-b-2 border-primary font-bold" : ""}`}>About Us</li>
+            </Link>
           </ul>
           <div className="flex items-center gap-sm">
             {isLoaded && !isSignedIn && (

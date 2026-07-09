@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
-import { getCreator } from "@/app/actions/user";
-import SendMessageButton from "@/components/SendMessageButton";
+import { getCreator, getDbUser } from "@/app/actions/user";
+import CreatorActions from "@/components/CreatorActions";
 
 export default async function CreatorDetailPage(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   const profile = await getCreator(params.id);
+  const currentUser = await getDbUser();
 
   if (!profile) {
     return (
@@ -17,6 +18,7 @@ export default async function CreatorDetailPage(props: { params: Promise<{ id: s
     );
   }
 
+  const isOwner = currentUser?.id === profile.id;
   const showreel = profile.portfolioItems?.[0]?.externalLink;
   const isYoutube = showreel?.includes("youtube.com") || showreel?.includes("youtu.be");
   const isVimeo = showreel?.includes("vimeo.com");
@@ -33,14 +35,14 @@ export default async function CreatorDetailPage(props: { params: Promise<{ id: s
 
         <div className="level-1-glass rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row gap-12 relative overflow-hidden">
           <div className="w-full md:w-1/3 z-10">
-            <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-xl">
+            <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-xl mb-4">
               <img 
                 src={profile.profilePhotoUrl || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop"} 
                 alt={profile.fullName} 
                 className="w-full h-full object-cover" 
               />
             </div>
-            <SendMessageButton userId={profile.id} />
+            <CreatorActions isOwner={isOwner} userId={profile.id} />
           </div>
           
           <div className="w-full md:w-2/3 z-10">

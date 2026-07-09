@@ -38,10 +38,10 @@ export default function OnboardingPage() {
   if (!isLoaded) return null;
 
   return (
-    <main className="min-h-screen w-full flex items-center justify-center relative px-4 pt-16">
+    <main className="flex-1 w-full flex items-center justify-center relative px-4 pt-32 pb-20">
       <div className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-[var(--color-primary)] opacity-10 blur-[150px] -z-10 pointer-events-none" />
       
-      <div className="level-1-glass w-full max-w-md rounded-[3rem] p-10 shadow-2xl relative">
+      <div className="level-1-glass w-[90%] sm:w-[400px] md:w-[448px] rounded-[3rem] p-10 shadow-2xl relative flex flex-col">
         <div className="text-center mb-10">
           <h1 className="font-display text-4xl mb-2 text-[var(--color-text-main)]">Welcome to FilmFolio!</h1>
           <p className="font-sans text-[var(--color-text-secondary)]">Let's get the basics down before you start networking.</p>

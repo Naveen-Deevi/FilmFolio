@@ -30,18 +30,47 @@ export default function DiscoverHeader() {
           Connect with top filmmakers, crew, and talent. The professional network built for the cinema industry.
         </p>
         
-        <form onSubmit={handleSearch} className="max-w-xl mx-auto flex items-center gap-2">
+        <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto flex items-center gap-2 mb-8">
           <input 
             type="text" 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, role (e.g. Director, Crew)..."
-            className="liquid-glass w-full py-4 px-6 rounded-full outline-none text-[var(--color-text-main)] font-sans border border-primary/20 focus:border-primary transition-colors"
+            className="liquid-glass flex-1 min-w-0 py-4 px-6 rounded-full outline-none text-[var(--color-text-main)] font-sans border border-primary/20 focus:border-primary transition-colors"
           />
-          <button type="submit" className="liquid-glass px-8 py-4 rounded-full text-primary hover:bg-primary/10 transition-colors font-title-md border border-primary/20">
+          <button type="submit" className="liquid-glass px-8 py-4 rounded-full text-primary hover:bg-primary/10 transition-colors font-title-md border border-primary/20 shrink-0">
             Search
           </button>
         </form>
+
+        <div className="flex gap-4 flex-wrap justify-center">
+          {["All Talent", "Director", "Cinematography", "Editor", "Production"].map(cat => {
+            // Check if current query exactly matches the category, or if it's "All Talent" and query is empty
+            const isActive = 
+              (cat === "All Talent" && !currentQuery) || 
+              (currentQuery.toLowerCase() === cat.toLowerCase());
+            
+            return (
+              <button 
+                key={cat} 
+                onClick={() => {
+                  if (cat === "All Talent") {
+                    router.push('/discover');
+                  } else {
+                    router.push(`/discover?q=${cat}`);
+                  }
+                }}
+                className={`px-6 py-2 rounded-full border font-sans text-sm transition-colors ${
+                  isActive 
+                    ? "bg-black text-white border-black" 
+                    : "border-black/10 hover:bg-[rgba(0,0,0,0.05)] text-[var(--color-text-main)]"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <CollaborationDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
