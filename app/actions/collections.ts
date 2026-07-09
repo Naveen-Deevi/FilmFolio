@@ -94,7 +94,11 @@ export async function getCollectionWithItems(collectionId: bigint) {
               professions: { include: { profession: true } },
             },
           },
-          targetEquip: true,
+          targetEquip: {
+            include: {
+              images: true,
+            },
+          },
         },
       },
     },

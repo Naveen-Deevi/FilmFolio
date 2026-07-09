@@ -34,7 +34,15 @@ export default async function CollectionDetailPage(props: { params: Promise<{ id
 
   const equipment = collection.savedItems
     .filter((item) => item.itemType === "equipment" && item.targetEquip)
-    .map((item) => item.targetEquip!);
+    .map((item) => {
+      const eq = item.targetEquip!;
+      return {
+        id: eq.id,
+        title: eq.title,
+        rentalPrice: eq.rentalPrice,
+        imageUrl: eq.images?.[0]?.imageUrl || "https://images.unsplash.com/photo-1516961642265-531546e84af2?w=600&h=400&fit=crop",
+      };
+    });
 
   return (
     <>
