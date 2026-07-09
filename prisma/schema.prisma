@@ -1,0 +1,325 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clerkId           String?   @unique @map("clerk_id")
+  email             String    @unique @db.VarChar(255)
+  username          String    @unique @db.VarChar(50)
+  fullName          String    @map("full_name") @db.VarChar(150)
+  phone             String?   @db.VarChar(30)
+  profilePhotoUrl   String?   @map("profile_photo_url")
+  website           String?
+  bio               String?
+  location          String?   @db.VarChar(150)
+  experienceYears   Int?      @default(0) @map("experience_years")
+  availability      String?   @default("available") @db.VarChar(30)
+  dateOfBirth       DateTime? @map("date_of_birth") @db.Date
+  isVerified        Boolean?  @default(false) @map("is_verified")
+  isAdmin           Boolean?  @default(false) @map("is_admin")
+  createdAt         DateTime? @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime? @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  professions       UserProfession[]
+  skills            UserSkill[]
+  languages         UserLanguage[]
+  educations        UserEducation[]
+  socialLinks       UserSocialLink[]
+  portfolioItems    PortfolioItem[]
+  projectsOwned     Project[]
+  applications      Application[]
+  projectMembers    ProjectMember[]
+  equipmentOwned    EquipmentListing[]
+  equipmentInquiries EquipmentInquiry[]
+  conversations     ConversationMember[]
+  messages          Message[]
+  notifications     Notification[]
+
+  @@map("users")
+}
+
+model Profession {
+  id              Int              @id @default(autoincrement())
+  name            String           @unique @db.VarChar(100)
+  userProfessions UserProfession[]
+
+  @@map("professions")
+}
+
+model Skill {
+  id         Int         @id @default(autoincrement())
+  name       String      @unique @db.VarChar(100)
+  userSkills UserSkill[]
+
+  @@map("skills")
+}
+
+model Language {
+  id            Int            @id @default(autoincrement())
+  name          String         @unique @db.VarChar(100)
+  userLanguages UserLanguage[]
+
+  @@map("languages")
+}
+
+model ProjectCategory {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique @db.VarChar(100)
+  projects Project[]
+
+  @@map("project_categories")
+}
+
+model EquipmentCategory {
+  id        Int                @id @default(autoincrement())
+  name      String             @unique @db.VarChar(100)
+  equipment EquipmentListing[]
+
+  @@map("equipment_categories")
+}
+
+model UserProfession {
+  userId       String     @map("user_id") @db.Uuid
+  professionId Int        @map("profession_id")
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  profession   Profession @relation(fields: [professionId], references: [id], onDelete: Cascade)
+
+  @@id([userId, professionId])
+  @@map("user_professions")
+}
+
+model UserSkill {
+  userId  String @map("user_id") @db.Uuid
+  skillId Int    @map("skill_id")
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill   Skill  @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@id([userId, skillId])
+  @@map("user_skills")
+}
+
+model UserLanguage {
+  userId     String   @map("user_id") @db.Uuid
+  languageId Int      @map("language_id")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  language   Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
+
+  @@id([userId, languageId])
+  @@map("user_languages")
+}
+
+model UserEducation {
+  id           BigInt  @id @default(autoincrement())
+  userId       String? @map("user_id") @db.Uuid
+  institution  String? @db.VarChar(150)
+  degree       String? @db.VarChar(150)
+  fieldOfStudy String? @map("field_of_study") @db.VarChar(150)
+  startYear    Int?    @map("start_year")
+  endYear      Int?    @map("end_year")
+  user         User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_education")
+}
+
+model UserSocialLink {
+  id       BigInt  @id @default(autoincrement())
+  userId   String? @map("user_id") @db.Uuid
+  platform String? @db.VarChar(50)
+  url      String
+  user     User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_social_links")
+}
+
+model PortfolioItem {
+  id           BigInt    @id @default(autoincrement())
+  userId       String?   @map("user_id") @db.Uuid
+  title        String?   @db.VarChar(150)
+  description  String?
+  mediaType    String?   @map("media_type") @db.VarChar(30)
+  fileUrl      String?   @map("file_url")
+  thumbnailUrl String?   @map("thumbnail_url")
+  externalLink String?   @map("external_link")
+  isFeatured   Boolean?  @default(false) @map("is_featured")
+  displayOrder Int?      @default(0) @map("display_order")
+  createdAt    DateTime? @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt    DateTime? @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+  user         User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("portfolio_items")
+}
+
+model Project {
+  id                BigInt           @id @default(autoincrement())
+  ownerId           String?          @map("owner_id") @db.Uuid
+  categoryId        Int?             @map("category_id")
+  title             String           @db.VarChar(150)
+  description       String?
+  productionDetails String?          @map("production_details")
+  shootLocation     String?          @map("shoot_location") @db.VarChar(150)
+  budget            Decimal?         @db.Decimal(12, 2)
+  startDate         DateTime?        @map("start_date") @db.Date
+  endDate           DateTime?        @map("end_date") @db.Date
+  bannerImageUrl    String?          @map("banner_image_url")
+  visibility        String?          @default("public") @db.VarChar(20)
+  status            String?          @default("open") @db.VarChar(20)
+  createdAt         DateTime?        @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt         DateTime?        @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+  owner             User?            @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  category          ProjectCategory? @relation(fields: [categoryId], references: [id])
+  images            ProjectImage[]
+  openings          ProjectOpening[]
+  members           ProjectMember[]
+
+  @@map("projects")
+}
+
+model ProjectImage {
+  id        BigInt   @id @default(autoincrement())
+  projectId BigInt?  @map("project_id")
+  imageUrl  String   @map("image_url")
+  project   Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@map("project_images")
+}
+
+model ProjectOpening {
+  id           BigInt        @id @default(autoincrement())
+  projectId    BigInt?       @map("project_id")
+  roleTitle    String        @map("role_title") @db.VarChar(100)
+  roleType     String?       @map("role_type") @db.VarChar(20)
+  description  String?
+  createdAt    DateTime?     @default(now()) @map("created_at") @db.Timestamptz
+  project      Project?      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  applications Application[]
+
+  @@map("project_openings")
+}
+
+model Application {
+  id          BigInt          @id @default(autoincrement())
+  openingId   BigInt?         @map("opening_id")
+  applicantId String?         @map("applicant_id") @db.Uuid
+  message     String?
+  status      String?         @default("pending") @db.VarChar(20)
+  appliedAt   DateTime?       @default(now()) @map("applied_at") @db.Timestamptz
+  opening     ProjectOpening? @relation(fields: [openingId], references: [id], onDelete: Cascade)
+  applicant   User?           @relation(fields: [applicantId], references: [id], onDelete: Cascade)
+
+  @@unique([openingId, applicantId])
+  @@map("applications")
+}
+
+model ProjectMember {
+  projectId BigInt  @map("project_id")
+  userId    String  @map("user_id") @db.Uuid
+  roleName  String? @map("role_name") @db.VarChar(100)
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, userId])
+  @@map("project_members")
+}
+
+model EquipmentListing {
+  id                 BigInt             @id @default(autoincrement())
+  ownerId            String?            @map("owner_id") @db.Uuid
+  categoryId         Int?               @map("category_id")
+  title              String             @db.VarChar(150)
+  brand              String?            @db.VarChar(100)
+  model              String?            @db.VarChar(100)
+  equipmentCondition String?            @map("equipment_condition") @db.VarChar(50)
+  description        String?
+  rentalPrice        Decimal?           @map("rental_price") @db.Decimal(10, 2)
+  securityDeposit    Decimal?           @map("security_deposit") @db.Decimal(10, 2)
+  minimumRentalDays  Int?               @default(1) @map("minimum_rental_days")
+  priceUnit          String?            @map("price_unit") @db.VarChar(20)
+  pickupLocation     String?            @map("pickup_location") @db.VarChar(150)
+  isAvailable        Boolean?           @default(true) @map("is_available")
+  createdAt          DateTime?          @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt          DateTime?          @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+  owner              User?              @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  category           EquipmentCategory? @relation(fields: [categoryId], references: [id])
+  images             EquipmentImage[]
+  inquiries          EquipmentInquiry[]
+
+  @@map("equipment_listings")
+}
+
+model EquipmentImage {
+  id        BigInt            @id @default(autoincrement())
+  listingId BigInt?           @map("listing_id")
+  imageUrl  String            @map("image_url")
+  listing   EquipmentListing? @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@map("equipment_images")
+}
+
+model EquipmentInquiry {
+  id        BigInt            @id @default(autoincrement())
+  listingId BigInt?           @map("listing_id")
+  senderId  String?           @map("sender_id") @db.Uuid
+  message   String?
+  status    String?           @default("open") @db.VarChar(20)
+  createdAt DateTime?         @default(now()) @map("created_at") @db.Timestamptz
+  listing   EquipmentListing? @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  sender    User?             @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@map("equipment_inquiries")
+}
+
+model Conversation {
+  id          BigInt               @id @default(autoincrement())
+  contextType String?              @map("context_type") @db.VarChar(20)
+  contextId   BigInt?              @map("context_id")
+  createdAt   DateTime?            @default(now()) @map("created_at") @db.Timestamptz
+  members     ConversationMember[]
+  messages    Message[]
+
+  @@map("conversations")
+}
+
+model ConversationMember {
+  conversationId BigInt       @map("conversation_id")
+  userId         String       @map("user_id") @db.Uuid
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([conversationId, userId])
+  @@map("conversation_members")
+}
+
+model Message {
+  id             BigInt        @id @default(autoincrement())
+  conversationId BigInt?       @map("conversation_id")
+  senderId       String?       @map("sender_id") @db.Uuid
+  content        String
+  isRead         Boolean?      @default(false) @map("is_read")
+  editedAt       DateTime?     @map("edited_at") @db.Timestamptz
+  deletedAt      DateTime?     @map("deleted_at") @db.Timestamptz
+  createdAt      DateTime?     @default(now()) @map("created_at") @db.Timestamptz
+  conversation   Conversation? @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         User?         @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+model Notification {
+  id               BigInt    @id @default(autoincrement())
+  userId           String?   @map("user_id") @db.Uuid
+  notificationType String    @map("notification_type") @db.VarChar(50)
+  referenceType    String?   @map("reference_type") @db.VarChar(50)
+  referenceId      BigInt?   @map("reference_id")
+  content          String
+  isRead           Boolean?  @default(false) @map("is_read")
+  createdAt        DateTime? @default(now()) @map("created_at") @db.Timestamptz
+  user             User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
