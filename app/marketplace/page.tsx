@@ -143,8 +143,8 @@ export default function MarketplacePage() {
                   <Image src={item.imageUrl} alt={item.title} width={600} height={450} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                 </div>
                 {/* Price Badge */}
-                <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 rounded-full font-mono font-bold shadow-xl flex items-center gap-1 border border-white/10 z-10">
-                  ${item.pricePerDay} <span className="text-xs opacity-70 font-sans font-normal tracking-wide">/day</span>
+                <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 rounded-full font-mono font-bold shadow-xl flex items-center gap-1 border border-white/10 z-10 whitespace-nowrap">
+                  ${item.pricePerDay.toLocaleString()} <span className="text-xs opacity-70 font-sans font-normal tracking-wide">/day</span>
                 </div>
               </div>
               
@@ -154,7 +154,7 @@ export default function MarketplacePage() {
                   {/* Rating Badge */}
                   <div className="flex items-center gap-1 text-xs font-sans font-bold bg-[#FFD700]/10 text-[#B8860B] border border-[#FFD700]/20 px-2.5 py-1 rounded-full shrink-0 shadow-sm">
                     <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                    {item.rating}
+                    {Number(item.rating).toFixed(1)}
                   </div>
                 </div>
                 
