@@ -19,7 +19,7 @@ export default function Footer() {
             <h6 className="font-title-md text-title-md text-on-surface mb-xs">Platform</h6>
             <nav className="flex flex-col gap-xs">
               <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/discover">Crew Catalog</Link>
-              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/marketplace">Equipment Hire</Link>
+              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/marketplace">Marketplace</Link>
               <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/projects">Showcase</Link>
               <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/">Global Ops</Link>
             </nav>
