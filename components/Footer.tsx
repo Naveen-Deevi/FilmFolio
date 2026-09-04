@@ -21,7 +21,6 @@ export default function Footer() {
               <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/discover">Crew Catalog</Link>
               <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/marketplace">Marketplace</Link>
               <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/projects">Showcase</Link>
-              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="/">Global Ops</Link>
             </nav>
           </div>
           

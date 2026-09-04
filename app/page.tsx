@@ -86,7 +86,7 @@ export default function LandingPage() {
             
             <div onClick={() => router.push('/marketplace')} className="group relative liquid-glass p-lg rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all flex flex-col justify-between h-80">
               <div className="relative z-10">
-                <h3 className="font-headline-lg text-headline-lg mb-xs">Rent Gear</h3>
+                <h3 className="font-headline-lg text-headline-lg mb-xs">Marketplace</h3>
                 <p className="font-body-md text-on-surface-variant text-[18px]">ARRI, RED, and Sony cameras at your fingertips.</p>
               </div>
               <div className="absolute bottom-6 right-6 opacity-40 group-hover:rotate-12 transition-transform">
