@@ -8,6 +8,8 @@ export default function MarketplacePage() {
   const [activeCategory, setActiveCategory] = useState("All Gear");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("recommended");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   // Simulate initial load for async feel
@@ -36,6 +38,14 @@ export default function MarketplacePage() {
       );
     }
 
+    // Filter by Price Range
+    if (minPrice !== "") {
+      result = result.filter(item => item.pricePerDay >= Number(minPrice));
+    }
+    if (maxPrice !== "") {
+      result = result.filter(item => item.pricePerDay <= Number(maxPrice));
+    }
+
     // Sort
     switch (sortBy) {
       case "price-asc":
@@ -53,14 +63,14 @@ export default function MarketplacePage() {
     }
 
     return result;
-  }, [activeCategory, searchQuery, sortBy]);
+  }, [activeCategory, searchQuery, sortBy, minPrice, maxPrice]);
 
   return (
     <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-7xl mx-auto relative">
       {/* Header */}
       <div className="mb-12 text-center max-w-3xl mx-auto">
-        <h1 className="font-display text-6xl md:text-8xl mb-6 text-[var(--color-text-main)]">
-          GEAR <span className="text-[var(--color-primary)]">MARKETPLACE</span>
+        <h1 className="font-display text-6xl md:text-8xl mb-6 text-[var(--color-primary)] tracking-tight">
+          MARKETPLACE
         </h1>
         <p className="font-sans text-xl text-[var(--color-text-secondary)]">
           Rent top-tier cinema equipment directly from working professionals.
@@ -79,7 +89,27 @@ export default function MarketplacePage() {
             className="w-full pl-12 pr-4 py-3 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans"
           />
         </div>
-        <div className="flex items-center gap-3 w-full md:w-auto">
+        
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 w-full md:w-auto">
+          {/* Price Range */}
+          <div className="flex items-center gap-2 bg-white/50 backdrop-blur-md px-3 py-2 rounded-full border border-black/10 shadow-sm">
+            <span className="font-sans text-sm font-bold text-[var(--color-text-secondary)]">Price:</span>
+            <input 
+              type="number" 
+              placeholder="Min" 
+              value={minPrice}
+              onChange={(e) => setMinPrice(e.target.value)}
+              className="w-16 bg-transparent border-b border-black/20 focus:border-[var(--color-primary)] focus:outline-none text-sm font-sans text-center"
+            />
+            <span className="text-black/30">-</span>
+            <input 
+              type="number" 
+              placeholder="Max" 
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(e.target.value)}
+              className="w-16 bg-transparent border-b border-black/20 focus:border-[var(--color-primary)] focus:outline-none text-sm font-sans text-center"
+            />
+          </div>
           <span className="font-sans text-sm font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Sort by</span>
           <div className="relative">
             <select 
@@ -183,6 +213,8 @@ export default function MarketplacePage() {
                 onClick={() => {
                   setSearchQuery("");
                   setActiveCategory("All Gear");
+                  setMinPrice("");
+                  setMaxPrice("");
                 }}
                 className="mt-8 px-8 py-3 rounded-full bg-black text-white hover:bg-[var(--color-primary)] font-bold text-sm transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >

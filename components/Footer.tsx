@@ -30,13 +30,13 @@ export default function Footer() {
           <div className="flex flex-col gap-md">
             <h6 className="font-title-md text-title-md text-on-surface">Connect</h6>
             <div className="flex gap-md text-primary">
-              <a className="p-2 -m-2 hover:scale-110 transition-transform flex items-center justify-center" href="#">
+              <a className="p-2 -m-2 hover:scale-110 transition-transform flex items-center justify-center" href="#" aria-label="Website">
                 <span className="material-symbols-outlined text-[28px]">public</span>
               </a>
-              <a className="p-2 -m-2 hover:scale-110 transition-transform flex items-center justify-center" href="#">
+              <a className="p-2 -m-2 hover:scale-110 transition-transform flex items-center justify-center" href="#" aria-label="Videos">
                 <span className="material-symbols-outlined text-[28px]">video_stable</span>
               </a>
-              <a className="p-2 -m-2 hover:scale-110 transition-transform flex items-center justify-center" href="#">
+              <a className="p-2 -m-2 hover:scale-110 transition-transform flex items-center justify-center" href="#" aria-label="Photography">
                 <span className="material-symbols-outlined text-[28px]">camera</span>
               </a>
             </div>
