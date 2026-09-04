@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navigation from "@/components/Navigation";
 import { MOCK_EQUIPMENT } from "@/lib/mockData";
+import Image from "next/image";
 
 export default function MarketplacePage() {
   const [activeCategory, setActiveCategory] = useState("All Gear");
@@ -48,7 +49,7 @@ export default function MarketplacePage() {
           {filteredEquipment.length > 0 ? filteredEquipment.map((item) => (
             <a href={`/marketplace/${item.id}`} key={item.id} className="flex flex-col gap-3 group cursor-pointer">
               <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black/5">
-                <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={item.imageUrl} alt={item.title} width={600} height={338} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               
               <div className="px-1 flex flex-col gap-1">

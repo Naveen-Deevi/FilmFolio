@@ -4,6 +4,7 @@ import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import { MOCK_EQUIPMENT } from "@/lib/mockData";
+import Image from "next/image";
 
 export default function MarketplaceDetailPage() {
   const params = useParams();
@@ -31,7 +32,7 @@ export default function MarketplaceDetailPage() {
         <div className="level-1-glass rounded-[3rem] p-10 md:p-12 flex flex-col md:flex-row gap-12 relative overflow-hidden">
           <div className="w-full md:w-1/2 z-10 flex flex-col gap-4">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-black/5">
-              <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+              <Image src={item.imageUrl} alt={item.title} width={800} height={600} className="w-full h-full object-cover" />
             </div>
           </div>
           
