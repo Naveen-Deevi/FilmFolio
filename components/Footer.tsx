@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="liquid-glass border-t border-primary/10 mt-auto">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
           {/* Brand Column */}
           <div className="space-y-md">
             <span className="font-headline-lg text-headline-lg text-primary tracking-wider block">FilmFolio</span>
@@ -25,17 +25,7 @@ export default function Footer() {
             </nav>
           </div>
           
-          {/* Resources Links */}
-          <div className="flex flex-col gap-sm">
-            <h6 className="font-title-md text-title-md text-on-surface mb-xs">Resources</h6>
-            <nav className="flex flex-col gap-xs">
-              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#">Help Center</Link>
-              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#">Safety Guides</Link>
-              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#">Pricing</Link>
-              <Link className="font-body-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#">Terms of Service</Link>
-            </nav>
-          </div>
-          
+
           {/* Connect & Social */}
           <div className="flex flex-col gap-md">
             <h6 className="font-title-md text-title-md text-on-surface">Connect</h6>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Navigation from "@/components/Navigation";
 import { MOCK_EQUIPMENT } from "@/lib/mockData";
 import Image from "next/image";
 
@@ -14,8 +13,6 @@ export default function MarketplacePage() {
 
   return (
     <>
-      <Navigation />
-      
       <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-7xl mx-auto relative">
         {/* Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto">
