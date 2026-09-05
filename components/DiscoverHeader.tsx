@@ -31,8 +31,8 @@ export default function DiscoverHeader() {
         </p>
         
         <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto mb-8 px-4">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-3 w-full">
-            <div className="relative w-full group">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3 w-full">
+            <div className="relative group">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
               <input 
                 type="text" 
