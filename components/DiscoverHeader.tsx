@@ -40,6 +40,7 @@ export default function DiscoverHeader() {
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search by name or role"
                 className="w-full pl-12 pr-4 py-3.5 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans text-lg text-black placeholder:text-gray-500"
+                style={{ background: 'red' }}
               />
             </div>
             <button type="submit" className="w-full md:w-auto px-8 py-3.5 rounded-full bg-black text-white hover:bg-[var(--color-primary)] transition-all font-bold text-sm shadow-md whitespace-nowrap">
