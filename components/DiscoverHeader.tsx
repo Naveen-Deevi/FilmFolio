@@ -30,18 +30,18 @@ export default function DiscoverHeader() {
           Connect with top filmmakers, crew, and talent. The professional network built for the cinema industry.
         </p>
         
-        <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto flex flex-col sm:flex-row items-stretch gap-3 mb-8 px-4">
-          <div className="relative flex-1 group">
+        <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-3 mb-8 px-4">
+          <div className="relative w-full sm:flex-1 group min-w-0">
             <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
             <input 
               type="text" 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by name, role (e.g. Director)..."
-              className="w-full pl-12 pr-4 py-3.5 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans text-lg text-[var(--color-text-main)]"
+              className="w-full min-w-0 pl-12 pr-4 py-3.5 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans text-lg text-[var(--color-text-main)]"
             />
           </div>
-          <button type="submit" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-black text-white hover:bg-[var(--color-primary)] transition-all font-bold text-sm shadow-md shrink-0 flex items-center justify-center">
+          <button type="submit" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-black text-white hover:bg-[var(--color-primary)] transition-all font-bold text-sm shadow-md shrink-0 whitespace-nowrap">
             Search
           </button>
         </form>
