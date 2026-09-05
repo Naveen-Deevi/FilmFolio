@@ -32,7 +32,7 @@ export default function Navigation({ hasPublished = false }: { hasPublished?: bo
         .py-md { padding-top: 24px; padding-bottom: 24px; }
         
         .liquid-glass {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.2);

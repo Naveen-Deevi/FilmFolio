@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import { getCollections } from "@/app/actions/collections";
 import { getDbUser } from "@/app/actions/user";
 
@@ -12,7 +11,6 @@ export default async function CollectionsPage() {
 
   return (
     <>
-      <Navigation />
       <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-5xl mx-auto relative">
         <h1 className="font-display text-5xl mb-10 text-[var(--color-text-main)]">My Saved Collections</h1>
 

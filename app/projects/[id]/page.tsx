@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
-import Navigation from "@/components/Navigation";
 import { MOCK_PROJECTS } from "@/lib/mockData";
 
 export default function ProjectDetailPage() {
@@ -14,7 +13,6 @@ export default function ProjectDetailPage() {
   if (!project) {
     return (
       <>
-        <Navigation />
         <div className="pt-32 text-center text-xl font-sans">Project not found.</div>
       </>
     );
@@ -22,7 +20,6 @@ export default function ProjectDetailPage() {
 
   return (
     <>
-      <Navigation />
       <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-5xl mx-auto relative">
         <button onClick={() => router.back()} className="mb-8 font-sans text-sm font-bold opacity-60 hover:opacity-100 flex items-center gap-2 transition-all">
           ← Back to Projects

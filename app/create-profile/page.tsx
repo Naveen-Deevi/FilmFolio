@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Navigation from "@/components/Navigation";
 import { getDbUser, publishPortfolio } from "@/app/actions/user";
 
 export default function CreateProfilePage() {
@@ -59,7 +58,6 @@ export default function CreateProfilePage() {
   if (loading) {
     return (
       <>
-        <Navigation />
         <div className="min-h-screen flex items-center justify-center font-sans">Loading profile...</div>
       </>
     );
@@ -67,7 +65,6 @@ export default function CreateProfilePage() {
 
   return (
     <>
-      <Navigation />
       <main className="min-h-screen w-full flex items-center justify-center relative px-4">
         <div className="absolute top-[30%] left-[30%] w-[30vw] h-[30vw] rounded-full bg-[var(--color-primary)] opacity-5 blur-[150px] -z-10 pointer-events-none" />
         

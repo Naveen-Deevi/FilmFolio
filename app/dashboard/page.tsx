@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import { MOCK_PROJECTS, MOCK_EQUIPMENT } from "@/lib/mockData";
 
 export default function UserDashboardPage() {
@@ -12,7 +11,6 @@ export default function UserDashboardPage() {
 
   return (
     <>
-      <Navigation />
       <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-6xl mx-auto relative min-h-screen">
         {/* Background Decorative */}
         <div className="absolute top-[20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-primary)] opacity-5 blur-[150px] -z-10 pointer-events-none" />

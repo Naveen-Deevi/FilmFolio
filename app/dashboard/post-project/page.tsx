@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Navigation from "@/components/Navigation";
 import { MOCK_PROJECTS } from "@/lib/mockData";
 
 export default function PostProjectPage() {
@@ -33,7 +32,6 @@ export default function PostProjectPage() {
 
   return (
     <>
-      <Navigation />
       <main className="min-h-screen w-full flex flex-col items-center justify-center relative px-4 pt-32 pb-24">
         <div className="absolute top-[30%] right-[30%] w-[30vw] h-[30vw] rounded-full bg-[var(--color-primary)] opacity-5 blur-[150px] -z-10 pointer-events-none" />
         

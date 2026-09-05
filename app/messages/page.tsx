@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Navigation from "@/components/Navigation";
 import { getConversations, getMessages, sendMessage } from "@/app/actions/messages";
 import { useUser } from "@clerk/nextjs";
 
@@ -134,7 +133,6 @@ export default function MessagesPage() {
   if (!isLoaded || isLoading) {
     return (
       <>
-        <Navigation />
         <main className="w-full pt-32 pb-8 px-4 flex justify-center h-screen items-center">
           <p className="font-sans animate-pulse">Loading messages...</p>
         </main>
@@ -145,7 +143,6 @@ export default function MessagesPage() {
   if (!isSignedIn) {
     return (
       <>
-        <Navigation />
         <main className="w-full pt-32 pb-8 px-4 flex justify-center h-screen items-center text-center">
           <div>
             <h2 className="font-display text-3xl mb-4">Please log in</h2>
@@ -160,7 +157,6 @@ export default function MessagesPage() {
 
   return (
     <>
-      <Navigation />
       <main className="w-full pt-32 pb-8 px-4 sm:px-8 max-w-[1400px] mx-auto h-[95vh] flex flex-col relative">
         <div className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-[var(--color-primary)] opacity-5 blur-[150px] -z-10 pointer-events-none" />
 

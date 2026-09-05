@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import { getCollectionWithItems } from "@/app/actions/collections";
 import PortfolioCard from "@/components/PortfolioCard";
 
@@ -12,7 +11,6 @@ export default async function CollectionDetailPage(props: { params: Promise<{ id
   if (!collection) {
     return (
       <>
-        <Navigation />
         <div className="pt-32 text-center text-xl font-sans">Collection not found.</div>
       </>
     );
@@ -46,7 +44,6 @@ export default async function CollectionDetailPage(props: { params: Promise<{ id
 
   return (
     <>
-      <Navigation />
       <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-7xl mx-auto relative">
         <Link href="/dashboard/collections" className="mb-8 font-sans text-sm font-bold opacity-60 hover:opacity-100 flex items-center gap-2 transition-all w-fit">
           ← Back to Collections

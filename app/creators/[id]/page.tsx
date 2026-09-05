@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import { getCreator, getDbUser } from "@/app/actions/user";
 import CreatorActions from "@/components/CreatorActions";
 
@@ -12,7 +11,6 @@ export default async function CreatorDetailPage(props: { params: Promise<{ id: s
   if (!profile) {
     return (
       <>
-        <Navigation />
         <div className="pt-32 text-center text-xl font-sans">Creator not found.</div>
       </>
     );
@@ -25,7 +23,6 @@ export default async function CreatorDetailPage(props: { params: Promise<{ id: s
 
   return (
     <>
-      <Navigation />
       <main className="w-full pt-32 pb-24 px-4 sm:px-8 max-w-5xl mx-auto relative">
         <div className="absolute top-[10%] right-[10%] w-[40vw] h-[40vw] rounded-full bg-[var(--color-primary)] opacity-5 blur-[150px] -z-10 pointer-events-none" />
         
