@@ -31,19 +31,18 @@ export default function DiscoverHeader() {
         </p>
         
         <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto mb-8 px-4">
-          <div className="flex flex-col sm:flex-row gap-3 w-full">
-            <div className="relative flex-grow w-full" style={{ minWidth: '200px' }}>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full">
+            <div className="relative w-full sm:w-[400px]">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
               <input 
                 type="text" 
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search by name, role (e.g. Director)..."
+                placeholder="Search by name or role"
                 className="w-full pl-12 pr-4 py-3.5 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans text-lg text-[var(--color-text-main)]"
-                style={{ width: '100%' }}
               />
             </div>
-            <button type="submit" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-black text-white hover:bg-[var(--color-primary)] transition-all font-bold text-sm shadow-md shrink-0 whitespace-nowrap">
+            <button type="submit" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-black text-white hover:bg-[var(--color-primary)] transition-all font-bold text-sm shadow-md whitespace-nowrap">
               Search
             </button>
           </div>
