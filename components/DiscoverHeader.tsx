@@ -32,7 +32,7 @@ export default function DiscoverHeader() {
         
         <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto mb-8 px-4">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full">
-            <div className="relative w-full sm:w-[400px]">
+            <div className="relative w-full" style={{ maxWidth: '400px', flex: '1 1 auto' }}>
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
               <input 
                 type="text" 
