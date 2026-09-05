@@ -31,15 +31,15 @@ export default function DiscoverHeader() {
         </p>
         
         <form onSubmit={handleSearch} className="w-full max-w-xl mx-auto mb-8 px-4">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-3 w-full">
-            <div className="relative w-full md:w-96 group">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-3 w-full">
+            <div className="relative w-full group">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
               <input 
                 type="text" 
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search by name or role"
-                className="w-full pl-12 pr-4 py-3.5 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans text-lg text-black"
+                className="w-full pl-12 pr-4 py-3.5 rounded-full border border-black/10 bg-white/50 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:bg-white transition-all font-sans text-lg text-black placeholder:text-gray-500"
               />
             </div>
             <button type="submit" className="w-full md:w-auto px-8 py-3.5 rounded-full bg-black text-white hover:bg-[var(--color-primary)] transition-all font-bold text-sm shadow-md whitespace-nowrap">
