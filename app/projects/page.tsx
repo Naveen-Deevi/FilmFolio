@@ -47,8 +47,18 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredProjects.length > 0 ? filteredProjects.map((project) => (
             <a href={`/projects/${project.id}`} key={project.id} className="flex flex-col gap-3 group cursor-pointer">
-              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden relative bg-black/5">
-                <img src={project.posterUrl} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden relative bg-[var(--color-surface-variant)] flex items-center justify-center">
+                <span className="material-symbols-outlined text-[48px] text-[var(--color-text-secondary)] opacity-20 absolute">movie</span>
+                <img 
+                  src={project.posterUrl} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-10" 
+                  style={{ color: 'transparent' }}
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=800&fit=crop";
+                    e.currentTarget.onerror = null;
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <h3 className="font-display text-2xl mb-1">{project.title}</h3>
