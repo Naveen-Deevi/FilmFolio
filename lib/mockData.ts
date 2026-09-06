@@ -317,7 +317,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 1,
     "title": "Echoes of Eternity",
-    "posterUrl": "https://images.unsplash.com/photo-1530000000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project1/600/900",
     "genre": "Documentary",
     "stage": "Production",
     "rolesOpen": [
@@ -330,7 +330,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 2,
     "title": "Midnight in Marseille",
-    "posterUrl": "https://images.unsplash.com/photo-1530100000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project2/600/900",
     "genre": "Mystery",
     "stage": "Pre-production",
     "rolesOpen": [
@@ -343,7 +343,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 3,
     "title": "The Last Harvest",
-    "posterUrl": "https://images.unsplash.com/photo-1530200000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project3/600/900",
     "genre": "Sci-Fi / Drama",
     "stage": "Pre-production",
     "rolesOpen": [
@@ -356,7 +356,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 4,
     "title": "Neon Streets",
-    "posterUrl": "https://images.unsplash.com/photo-1530300000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project4/600/900",
     "genre": "Action",
     "stage": "Production",
     "rolesOpen": [
@@ -368,7 +368,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 5,
     "title": "Silent Echo",
-    "posterUrl": "https://images.unsplash.com/photo-1530400000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project5/600/900",
     "genre": "Fantasy",
     "stage": "Post-production",
     "rolesOpen": [
@@ -379,7 +379,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 6,
     "title": "Crimson Tide",
-    "posterUrl": "https://images.unsplash.com/photo-1530500000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project6/600/900",
     "genre": "Thriller",
     "stage": "Post-production",
     "rolesOpen": [
@@ -392,7 +392,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 7,
     "title": "Wandering Souls",
-    "posterUrl": "https://images.unsplash.com/photo-1530600000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project7/600/900",
     "genre": "Romance",
     "stage": "Production",
     "rolesOpen": [
@@ -405,7 +405,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 8,
     "title": "Fading Light",
-    "posterUrl": "https://images.unsplash.com/photo-1530700000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project8/600/900",
     "genre": "Romance",
     "stage": "Production",
     "rolesOpen": [
@@ -417,7 +417,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 9,
     "title": "Beyond the Horizon",
-    "posterUrl": "https://images.unsplash.com/photo-1530800000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project9/600/900",
     "genre": "Thriller",
     "stage": "Production",
     "rolesOpen": [
@@ -428,7 +428,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 10,
     "title": "Shadows Fall",
-    "posterUrl": "https://images.unsplash.com/photo-1530900000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project10/600/900",
     "genre": "Thriller",
     "stage": "Post-production",
     "rolesOpen": [
@@ -439,7 +439,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 11,
     "title": "Rising Sun",
-    "posterUrl": "https://images.unsplash.com/photo-1531000000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project11/600/900",
     "genre": "Romance",
     "stage": "Post-production",
     "rolesOpen": [
@@ -451,7 +451,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 12,
     "title": "Lost City",
-    "posterUrl": "https://images.unsplash.com/photo-1531100000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project12/600/900",
     "genre": "Thriller",
     "stage": "Development",
     "rolesOpen": [
@@ -464,7 +464,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 13,
     "title": "Hidden Truth",
-    "posterUrl": "https://images.unsplash.com/photo-1531200000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project13/600/900",
     "genre": "Comedy",
     "stage": "Pre-production",
     "rolesOpen": [
@@ -476,7 +476,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 14,
     "title": "Broken Glass",
-    "posterUrl": "https://images.unsplash.com/photo-1531300000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project14/600/900",
     "genre": "Romance",
     "stage": "Development",
     "rolesOpen": [
@@ -489,7 +489,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 15,
     "title": "Fallen Angels",
-    "posterUrl": "https://images.unsplash.com/photo-1531400000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project15/600/900",
     "genre": "Sci-Fi / Drama",
     "stage": "Development",
     "rolesOpen": [
@@ -501,7 +501,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 16,
     "title": "Dark Matter",
-    "posterUrl": "https://images.unsplash.com/photo-1531500000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project16/600/900",
     "genre": "Mystery",
     "stage": "Development",
     "rolesOpen": [
@@ -512,7 +512,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 17,
     "title": "Into the Void",
-    "posterUrl": "https://images.unsplash.com/photo-1531600000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project17/600/900",
     "genre": "Action",
     "stage": "Development",
     "rolesOpen": [
@@ -525,7 +525,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 18,
     "title": "End of Days",
-    "posterUrl": "https://images.unsplash.com/photo-1531700000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project18/600/900",
     "genre": "Romance",
     "stage": "Development",
     "rolesOpen": [
@@ -536,7 +536,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 19,
     "title": "New Beginnings",
-    "posterUrl": "https://images.unsplash.com/photo-1531800000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project19/600/900",
     "genre": "Sci-Fi / Drama",
     "stage": "Pre-production",
     "rolesOpen": [
@@ -548,7 +548,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 20,
     "title": "Shattered Dreams",
-    "posterUrl": "https://images.unsplash.com/photo-1531900000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project20/600/900",
     "genre": "Comedy",
     "stage": "Development",
     "rolesOpen": [
@@ -561,7 +561,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 21,
     "title": "Forgotten Memories",
-    "posterUrl": "https://images.unsplash.com/photo-1532000000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project21/600/900",
     "genre": "Action",
     "stage": "Post-production",
     "rolesOpen": [
@@ -572,7 +572,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 22,
     "title": "Eternal Flame",
-    "posterUrl": "https://images.unsplash.com/photo-1532100000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project22/600/900",
     "genre": "Romance",
     "stage": "Production",
     "rolesOpen": [
@@ -585,7 +585,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 23,
     "title": "Twisted Fate",
-    "posterUrl": "https://images.unsplash.com/photo-1532200000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project23/600/900",
     "genre": "Comedy",
     "stage": "Production",
     "rolesOpen": [
@@ -596,7 +596,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 24,
     "title": "Fading Echoes",
-    "posterUrl": "https://images.unsplash.com/photo-1532300000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project24/600/900",
     "genre": "Fantasy",
     "stage": "Production",
     "rolesOpen": [
@@ -609,7 +609,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 25,
     "title": "Distant Shores",
-    "posterUrl": "https://images.unsplash.com/photo-1532400000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project25/600/900",
     "genre": "Horror",
     "stage": "Production",
     "rolesOpen": [
@@ -621,7 +621,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 26,
     "title": "Whispering Winds",
-    "posterUrl": "https://images.unsplash.com/photo-1532500000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project26/600/900",
     "genre": "Documentary",
     "stage": "Production",
     "rolesOpen": [
@@ -632,7 +632,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 27,
     "title": "Silent Screams",
-    "posterUrl": "https://images.unsplash.com/photo-1532600000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project27/600/900",
     "genre": "Sci-Fi / Drama",
     "stage": "Pre-production",
     "rolesOpen": [
@@ -644,7 +644,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 28,
     "title": "Hidden Shadows",
-    "posterUrl": "https://images.unsplash.com/photo-1532700000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project28/600/900",
     "genre": "Sci-Fi / Drama",
     "stage": "Post-production",
     "rolesOpen": [
@@ -655,7 +655,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 29,
     "title": "Lost in Time",
-    "posterUrl": "https://images.unsplash.com/photo-1532800000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project29/600/900",
     "genre": "Documentary",
     "stage": "Post-production",
     "rolesOpen": [
@@ -666,7 +666,7 @@ export const MOCK_PROJECTS = [
   {
     "id": 30,
     "title": "Echoes of the Past",
-    "posterUrl": "https://images.unsplash.com/photo-1532900000000?w=600&h=800&fit=crop",
+    "posterUrl": "https://picsum.photos/seed/project30/600/900",
     "genre": "Mystery",
     "stage": "Development",
     "rolesOpen": [

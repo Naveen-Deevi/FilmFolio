@@ -62,10 +62,14 @@ export default function ProjectsPage() {
           {filteredProjects.length > 0 ? filteredProjects.map((project) => (
             <a href={`/projects/${project.id}`} key={project.id} className="flex flex-col group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm border border-black/5 hover:shadow-md transition-shadow">
               <div className={`w-full aspect-[4/5] relative bg-gradient-to-br ${getGenreGradient(project.genre)} flex items-center justify-center`}>
-                <span className="material-symbols-outlined text-[80px] text-white/20">movie_creation</span>
+                {project.posterUrl ? (
+                  <img src={project.posterUrl} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 absolute inset-0 z-10" />
+                ) : (
+                  <span className="material-symbols-outlined text-[80px] text-white/20">movie_creation</span>
+                )}
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20" />
+                <div className="absolute bottom-4 left-4 right-4 text-white z-30">
                   <h3 className="font-display text-2xl mb-1">{project.title}</h3>
                   <p className="font-sans text-xs opacity-80">{project.genre} • {project.stage}</p>
                 </div>
