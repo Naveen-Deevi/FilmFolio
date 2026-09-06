@@ -61,7 +61,7 @@ export default function LandingPage() {
                   <button className="glossy-primary text-on-primary-fixed font-title-md text-title-md px-xl py-md rounded-full hover:scale-105 transition-transform w-full md:w-auto h-[52px] flex items-center justify-center">Explore The Catalog</button>
                 </Link>
                 <Link href="/about">
-                  <button className="liquid-glass text-white font-title-md text-title-md px-xl py-md rounded-full border-white/40 hover:bg-white/10 transition-colors w-full md:w-auto h-[52px] flex items-center justify-center">How it works</button>
+                  <button className="bg-white/20 backdrop-blur-md border border-white/60 text-white font-title-md text-title-md px-xl py-md rounded-full hover:bg-white/30 transition-all w-full md:w-auto h-[52px] flex items-center justify-center shadow-lg" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>How it works</button>
                 </Link>
               </div>
             </div>
